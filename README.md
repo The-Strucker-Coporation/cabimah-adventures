@@ -1,2 +1,2 @@
-# cabimah-adventures
+# Cabimah-Adventures
 Awaken the Adventurer in You
