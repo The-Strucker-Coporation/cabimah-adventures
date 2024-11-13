@@ -1,0 +1,14 @@
+{
+  "node": {
+    "970a479b89630766c2ecbcf9dd7d1d29ea9d02bb": {
+      "workers": {
+        "app/(root)/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fworkspaces%2Fcabimah-adventures%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/(root)/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "s4kSGM1r5b8HwDS/GVojXeXtb5hW0bDlAoGJtsyCFsg="
+}
