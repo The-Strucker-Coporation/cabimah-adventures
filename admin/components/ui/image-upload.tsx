@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -24,16 +24,15 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 
     useEffect(() => {
         setIsMounted(true);
-    }, [])
+    }, []);
     
-    const onUpload = (result: any) => {
+    const onSuccess = (result: any) => {
         onChange(result.info.secure_url);
-    }
+    };
 
     if (!isMounted) {
         return null;
     }
-
 
     return (
         <div>
@@ -49,22 +48,22 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                     </div>
                 ))}
             </div>
-            <CldUploadWidget onUpload={onUpload} uploadPreset='abimah'>
+            <CldUploadWidget onSuccess={onSuccess} uploadPreset='abimah'>
                 {({ open }) => {
                     const onClick = () => {
                         open();
-                    }
+                    };
 
                     return (
                         <Button type='button' disabled={disabled} variant={'secondary'} onClick={onClick}>
                             <ImagePlus className='h-4 w-4 mr-2' />
                             Upload an Image
                         </Button>
-                    )
+                    );
                 }}
             </CldUploadWidget>
         </div>
-    )
+    );
 };
 
-export default ImageUpload
+export default ImageUpload;
