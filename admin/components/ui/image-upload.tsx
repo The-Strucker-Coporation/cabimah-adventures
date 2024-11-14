@@ -27,7 +27,9 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     }, []);
     
     const onSuccess = (result: any) => {
-        onChange(result.info.secure_url);
+        const imageUrl = result.info.secure_url;
+        console.log("Uploaded Image URL:", imageUrl); // Debug log
+        onChange(imageUrl);
     };
 
     if (!isMounted) {
@@ -48,7 +50,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                     </div>
                 ))}
             </div>
-            <CldUploadWidget onSuccess={onSuccess} uploadPreset='abimah'>
+            <CldUploadWidget onSuccess={onSuccess} uploadPreset='ml_default'>
                 {({ open }) => {
                     const onClick = () => {
                         open();

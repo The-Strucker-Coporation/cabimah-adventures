@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from 'react'
 import * as z from 'zod'
@@ -111,8 +111,14 @@ export const BillboardForm: React.FC<SettingsFromProps> = ({ initialData }) => {
                                     <ImageUpload
                                         value={field.value ? [field.value] : []}
                                         disabled={loading}
-                                        onChange={(url) => field.onChange(url)}
-                                        onRemove={() => field.onChange('')}
+                                        onChange={(url) => {
+                                            console.log("Image URL set:", url); // Debug log
+                                            field.onChange(url);
+                                        }}
+                                        onRemove={() => {
+                                            console.log("Image URL removed"); // Debug log
+                                            field.onChange('');
+                                        }}
                                     />
                                 </FormControl>
                                 <FormMessage />
@@ -137,7 +143,6 @@ export const BillboardForm: React.FC<SettingsFromProps> = ({ initialData }) => {
                     <Button disabled={loading} className='ml-auto' type='submit'>{action}</Button>
                 </form>
             </Form>
-            {/* <Separator /> */}
         </>
     )
 }
