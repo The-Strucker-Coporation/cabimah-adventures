@@ -10,12 +10,16 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
             <div
                 className='rounded-xl relative aspect-square md:aspect-[2.4/1] overflow-hidden'
                 style={{ backgroundImage: `url(${data?.imageUrl})` }}>
-                    <div className='flex flex-col items-center justify-center w-full h-full text-center gap-y-8'>
-                        <div className='max-w-xs text-3xl font-bold sm:text-5xl lg:text-6xl sm:max-w-xl'>
-                            {data?.label}
-                        </div>
+                
+                {/* Overlay div with opacity */}
+                <div className='absolute inset-0 bg-black opacity-50' />  {/* Adjust opacity as needed */}
+
+                <div className='flex flex-col items-center justify-center w-full h-full text-center gap-y-8'>
+                    <div className='max-w-xs text-3xl text-white font-bold sm:text-5xl lg:text-6xl sm:max-w-xl'>
+                        {data?.label}
                     </div>
                 </div>
+            </div>
         </div>
     );
 }
